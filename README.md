@@ -19,3 +19,10 @@ react приложение скомпилированно в папку client/b
 
 - cd client
 - yarn install
+
+# React
+
+чтобы запустить тесты
+
+- cd client
+- yarn test
