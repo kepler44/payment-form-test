@@ -109,3 +109,5 @@ app.listen(app.get("port"), () => {
 	console.log(`Server is listening on ${app.get("host")}:${app.get("port")}`);
 	console.log("  Press CTRL-C to stop\n");
 });
+
+module.exports = app;

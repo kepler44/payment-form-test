@@ -120,6 +120,7 @@ const PaymentPage = () => {
 									error={inputErrors.CardNumber !== undefined}
 									variant="standard"
 									disabled={isLoading}
+									style={{ width: "100%" }}
 								>
 									<InputLabel htmlFor="formatted-text-mask-input">
 										Card Number:
@@ -186,6 +187,7 @@ const PaymentPage = () => {
 									error={inputErrors.Amount !== undefined}
 									variant="standard"
 									disabled={isLoading}
+									style={{ width: "100%" }}
 								>
 									<InputLabel htmlFor="formatted-text-mask-input">
 										Amount

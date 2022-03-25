@@ -55,17 +55,19 @@ const actions = {
 function validatePaymentForm(body) {
 	let res = {};
 
-	if (!validator.isNumeric(body.CardNumber))
+	if (!body.CardNumber || !validator.isNumeric(body.CardNumber))
 		res = { ...res, CardNumber: "0x0" };
 	else if (body.CardNumber.length !== 16) res = { ...res, CardNumber: "0x1" };
 
-	if (!validator.isNumeric(body.ExpDate)) res = { ...res, ExpDate: "0x2" };
+	if (!body.ExpDate || !validator.isNumeric(body.ExpDate))
+		res = { ...res, ExpDate: "0x2" };
 	else if (body.ExpDate.length !== 6) res = { ...res, ExpDate: "0x3" };
 
-	if (!validator.isNumeric(body.Cvv)) res = { ...res, Cvv: "0x4" };
+	if (!body.Cvv || !validator.isNumeric(body.Cvv)) res = { ...res, Cvv: "0x4" };
 	else if (body.Cvv.length !== 3) res = { ...res, Cvv: "0x5" };
 
-	if (!validator.isNumeric(body.Amount)) res = { ...res, Amount: "0x6" };
+	if (!body.Amount || !validator.isNumeric(body.Amount))
+		res = { ...res, Amount: "0x6" };
 	else if (body.Amount.length > 6) res = { ...res, Amount: "0x7" };
 
 	/* if (validationErrors.length) {
